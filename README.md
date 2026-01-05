@@ -1,88 +1,102 @@
-Readme.md 
+🏛️ House of Consequences
 
-# House of Consequences  
-*Decision Lifecycle Model & Visualization Prototype*
+Decision Lifecycle Archive – Commercial Prototype
 
-House of Consequences on institutionaalinen päätöksenteon elinkaarimalli ja sitä havainnollistava verkkopohjainen prototyyppi.  
-Projektin tavoitteena on estää institutionaalinen unohtaminen tekemällä päätösten pitkäaikaiset vaikutukset näkyviksi, tulkittaviksi ja dokumentoitaviksi.
+House of Consequences on web-pohjainen kaupallinen prototyyppi, joka toteuttaa Seurausten talo -mallin ohjelmistomuodossa.
 
-Tämä repository ei ole valmis tuote, vaan *rakenteellinen malli ja toiminnallinen demonstraatio*, jota voidaan käyttää päätöksenteon arvioinnissa, koulutuksessa ja organisatorisessa analyysissä.
+Se on tarkoitettu organisaatioille, jotka tarvitsevat keinon dokumentoida, tarkastella ja säilyttää päätösten seuraukset ajassa, ei pelkästään päätöksiä itseään.
 
-## Tarkoitus
 
-Monissa organisaatioissa päätökset irrotetaan ajan kuluessa alkuperäisestä kontekstistaan.  
-House of Consequences tarjoaa kehyksen, jossa päätöstä tarkastellaan koko sen elinkaaren ajan:
+# What this product is
 
-*Decision → Impact → Consequences → Adaptation → Repetition → Normalization*
+House of Consequences is a decision lifecycle documentation tool.
 
-Malli auttaa tunnistamaan:
-- miten päätökset muuttuvat rakenteiksi
-- milloin poikkeuksista tulee normeja
-- missä vaiheessa vastuu, kustannukset ja hyödyt siirtyvät
+It enables organizations to:
+	•	record significant decisions
+	•	track their effects and consequences over time
+	•	preserve institutional memory
+	•	prevent structural forgetting
 
-## Mitä tämä projekti on
+This repository contains a commercial prototype, not an open framework.
 
-- 📐 Rakenteellinen malli päätösten elinkaaren tulkintaan  
-- 🌐 Staattinen ja kevyt verkkopohjainen visualisointiprototyyppi  
-- 📄 Dokumentoitava viitekehys organisaatioille  
-- 🧪 Kehitysalusta jatkokehitykselle ja sovelluksille  
 
-## Mitä tämä projekti ei ole
+# Conceptual foundation
 
-- ❌ Ei valmis SaaS-tuote  
-- ❌ Ei automaattinen päätöksentekojärjestelmä  
-- ❌ Ei juridinen tai normatiivinen arviointityökalu  
-- ❌ Ei datankeruualusta ilman erillistä toteutusta  
+The software is based on the Seurausten talo (House of Consequences) decision lifecycle model:
+	1.	Decision
+	2.	Impact
+	3.	Consequences
+	4.	Adaptation
+	5.	Accumulation
+	6.	Normalization
 
-## Repositoryn rakenne
+The model itself is conceptual and institutional.
+This repository implements it as a product.
 
+
+# What the prototype includes
+	•	Decision case creation (single-case MVP)
+	•	Structured lifecycle input (6 phases)
+	•	Visual lifecycle preview
+	•	Automatic Case ID generation
+	•	PDF export for archiving and audits
+	•	Local-first storage (browser-based)
+	•	Single-file deployment (index.html)
+
+No backend. No user accounts. No analytics.
+This is intentional.
+
+
+# Intended users
+	•	Companies (strategy, compliance, risk management)
+	•	Public sector organizations
+	•	NGOs and foundations
+	•	Auditors and evaluators
+	•	Research and policy units
+  
+
+# Technical structure
+
+This is a static web prototype:
 
 House-of-Consequences/
-├─ web/
-│   ├─ index.html              # Kanoninen malli (staattinen)
-│   ├─ ympyra-kaavio.html      # Rakenteellinen visualisointi
-│   └─ ympyra-kaavio-interaktiivinen.html
-├─ docs/
-│   ├─ CONCEPT.md              # Käsitteellinen perusta
-│   ├─ ARCHITECTURE.md         # Rakenteet ja komponentit
-│   ├─ INTERPRETATION.md       # Tulkintaohjeet
-│   └─ GOVERNANCE.md           # Mallin käyttöperiaatteet
-├─ LICENSE
-└─ README.md
+├── index.html
+├── README.md
+├── LICENSE
+└── .gitignore
+
+Runs directly in any modern browser.
+Deployable via GitHub Pages or internal servers.
 
 
-## Käyttökohteita
 
-House of Consequences soveltuu erityisesti:
-- yritysten strategisten päätösten jälkianalyysiin
-- hallinnollisten prosessien läpinäkyvyyteen
-- riskienhallintaan ja vaikutusarviointiin
-- koulutus- ja tutkimuskäyttöön
-- eettisten ja organisatoristen kehien hahmottamiseen
+⚖️ Commercial use & licensing
 
+House of Consequences is a commercial product prototype.
+	•	This repository is provided for evaluation, demonstration, and pilot use
+	•	Redistribution or production use requires a separate commercial agreement
+	•	Licensing models (Single / Team / Enterprise) are defined outside this repository
 
-## Lisenssi
+The Seurausten talo model itself is not licensed here.
+Only its software implementation is.
 
-Tämä projekti on julkaistu *MIT-lisenssillä*.  
-Lisenssi sallii vapaan käytön, muokkaamisen ja jatkokehityksen, myös kaupallisissa yhteyksissä.
+# Development status
 
-Huomio:  
-Mallin soveltaminen institutionaalisessa tai juridisessa päätöksenteossa edellyttää aina tapauskohtaista harkintaa.
+Status: Functional commercial prototype (MVP)
 
+Planned extensions (not included here):
+	•	Multi-case archives
+	•	Organizational memory layers
+	•	Version history and traceability
+	•	Enterprise integrations
 
-## Tila
+🏛️ About Seurausten talo
 
-🔹 Tämä projekti on aktiivisessa kehitysvaiheessa  
-🔹 Rakenteellinen malli on vakaa  
-🔹 Käyttöliittymä on prototyyppitasolla  
+Seurausten talo is an institutional and conceptual framework for understanding how decisions persist and accumulate consequences over time.
 
-Jatkokehitys voi sisältää:
-- erilliset organisaatioversiot
-- arkistointirakenteet
-- lisensoidut käyttömallit
-- auditointi- ja raportointilaajennukset
+House of Consequences is one possible implementation of that model.
 
 
-© 2026 House of Consequences  
-Decision Lifecycle Frameworkes  
+© 2026 House of Consequences
+Conceptual framework: Seurausten talo
 Decision Lifecycle Framework
