@@ -1,0 +1,44 @@
+# =========================
+# House of Consequences
+# Static Web Prototype
+# =========================
+
+# --- Operating systems ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+
+# --- Editors / IDEs ---
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# --- Temporary / backup files ---
+*.tmp
+*.bak
+*.old
+*.log
+
+# --- Local dev artifacts ---
+.local/
+.cache/
+
+# --- Build artifacts (future-proof, safe) ---
+dist/
+build/
+
+# --- PDF exports (do not version) ---
+*.pdf
+
+# --- Environment (not used yet, but prevent accidents) ---
+.env
+.env.*
+
+# --- Ignore experiments / drafts ---
+sandbox/
+drafts/
+_notes/
