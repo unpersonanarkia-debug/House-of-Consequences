@@ -183,3 +183,7 @@ def api_list_consequences(
     db: Session = Depends(get_db)
 ):
     return get_consequences(db, decision_id)
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=8000)
+
