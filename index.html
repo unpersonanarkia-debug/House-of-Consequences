@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8">
+  <title>Seurausten talo – Päätöksen elinkaari</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Seurausten talo on päätösten elinkaaren rakenteellinen malli, joka mahdollistaa vaikutusten, seurausten ja kertautumisen systemaattisen dokumentoinnin.">
+
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --ink: #1f2933;
+      --muted: #6b7280;
+      --line: #d1d5db;
+      --accent: #1e3a5f;
+      --panel: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      line-height: 1.7;
+    }
+
+    header {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0 0 0.5rem;
+      font-size: 2.4rem;
+      letter-spacing: 0.5px;
+    }
+
+    header p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 0 1.5rem 4rem;
+    }
+
+    /* --- Kanoninen komponentti: vaiheblokki --- */
+
+    .phase {
+      margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .phase-index {
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #8b6f47;
+      margin-bottom: 0.4rem;
+    }
+
+    .phase h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1.6rem;
+      color: var(--accent);
+    }
+
+    .phase p {
+      max-width: 740px;
+      margin: 0;
+    }
+
+    /* --- Lomake / dokumentointi --- */
+
+    .panel {
+      margin-top: 3rem;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      padding: 2rem;
+    }
+
+    .panel h3 {
+      margin-top: 0;
+      font-size: 1.4rem;
+      color: var(--accent);
+    }
+
+    .field {
+      margin-top: 1.5rem;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      font-family: inherit;
+      font-size: 0.95rem;
+      padding: 0.6rem;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: #fff;
+    }
+
+    textarea {
+      min-height: 90px;
+      resize: vertical;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    /* --- Yhteenveto --- */
+
+    .summary {
+      margin-top: 4rem;
+      padding-top: 2rem;
+      border-top: 2px solid var(--accent);
+    }
+
+    .summary h2 {
+      font-size: 1.6rem;
+      color: var(--accent);
+    }
+
+    .summary-box {
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      background: #f9fafb;
+      border-left: 4px solid var(--accent);
+      font-size: 0.95rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      background: var(--bg);
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Seurausten talo</h1>
+  <p>
+    Seurausten talo on päätösten elinkaaren rakenteellinen malli.
+    Se ei arvioi päätöksiä moraalisesti, vaan tekee niiden vaikutukset,
+    seuraukset ja kertautumisen näkyviksi ajassa.
+  </p>
+</header>
+
+<main>
+
+  <!-- KUUSI KANONISTA VAIHETTA -->
+
+  <section class="phase">
+    <div class="phase-index">Vaihe 1 / 6</div>
+    <h2>Päätös</h2>
+    <p>
+      Päätöksen hetkellä yksi toimintalinja valitaan muiden vaihtoehtojen sijaan.
+      Tässä vaiheessa huomio kohdistuu usein tavoitteisiin, ei vielä vaikutusketjuihin.
+    </p>
+  </section>
+
+  <section class="phase">
+    <div class="phase-index">Vaihe 2 / 6</div>
+    <h2>Vaikutus</h2>
+    <p>
+      Päätös alkaa vaikuttaa ympäristöönsä. Ensimmäiset vaikutukset voivat olla
+      toivottuja, huomaamattomia tai odottamattomia.
+    </p>
+  </section>
+
+  <section class="phase">
+    <div class="phase-index">Vaihe 3 / 6</div>
+    <h2>Seuraukset</h2>
+    <p>
+      Vaikutuksista muodostuu seurauksia. Ne voivat olla viivästyneitä,
+      epäsuoria tai jakautua eri toimijoille.
+    </p>
+  </section>
+
+  <section class="phase">
+    <div class="phase-index">Vaihe 4 / 6</div>
+    <h2>Sopeutuminen</h2>
+    <p>
+      Järjestelmät ja ihmiset alkavat sopeutua seurauksiin.
+      Alkuperäinen päätös ei ole enää keskustelun keskiössä.
+    </p>
+  </section>
+
+  <section class="phase">
+    <div class="phase-index">Vaihe 5 / 6</div>
+    <h2>Kertautuminen</h2>
+    <p>
+      Sopeutumisesta syntyy uusi normaali. Rakenteet alkavat tuottaa
+      samanlaisia vaikutuksia yhä uudelleen.
+    </p>
+  </section>
+
+  <section class="phase">
+    <div class="phase-index">Vaihe 6 / 6</div>
+    <h2>Normalisoituminen</h2>
+    <p>
+      Päätöksen alkuperä unohtuu. Jäljelle jää tila,
+      jota pidetään luonnollisena tai väistämättömänä.
+    </p>
+  </section>
+
+  <!-- DOKUMENTOINTIPANEELI -->
+
+  <section class="panel">
+    <h3>Päätöksen dokumentointi</h3>
+
+    <div class="meta">
+      <div class="field">
+        <label>Organisaatio</label>
+        <input type="text" placeholder="Organisaation nimi">
+      </div>
+      <div class="field">
+        <label>Päätöksen päivämäärä</label>
+        <input type="date">
+      </div>
+      <div class="field">
+        <label>Case-tunnus</label>
+        <input type="text" placeholder="ST-0001">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Päätöksen kuvaus</label>
+      <textarea placeholder="Mikä päätös tehtiin ja missä kontekstissa?"></textarea>
+    </div>
+
+    <div class="field">
+      <label>Keskeiset seuraukset</label>
+      <textarea placeholder="Mitkä vaikutukset ja seuraukset ovat merkittävimpiä?"></textarea>
+    </div>
+  </section>
+
+  <!-- YHTEENVETO -->
+
+  <section class="summary">
+    <h2>Rakenteellinen huomio</h2>
+    <div class="summary-box">
+      Seurausten talo ei sulje kehää.
+      Jokainen normalisoitunut tila toimii uuden päätöksen lähtökohtana.
+      Mallin tarkoitus on estää institutionaalinen unohtaminen.
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Seurausten talo – rakenteellinen päätösmuisti
+</footer>
+
+</body>
+</html>
