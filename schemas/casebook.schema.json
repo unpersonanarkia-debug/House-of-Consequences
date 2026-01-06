@@ -1,0 +1,195 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://house-of-consequences.org/schemas/casebook.schema.json",
+  "title": "House of Consequences – Casebook",
+  "type": "object",
+  "required": [
+    "id",
+    "instanssi",
+    "toimiala",
+    "periodi",
+    "kuvaus",
+    "lähteet",
+    "cases"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Uniikki casebook-tunniste (slug)"
+    },
+    "instanssi": {
+      "type": "string",
+      "description": "Organisaatio tai yksikkö"
+    },
+    "toimiala": {
+      "type": "string",
+      "description": "Toimialaluokka (esim. lastensuojelu, terveydenhuolto)"
+    },
+    "periodi": {
+      "type": "string",
+      "description": "Aikajakso, jota casebook koskee (esim. 1990-2006)"
+    },
+    "kuvaus": {
+      "type": "string",
+      "description": "Mitä tätä casebookia käytetään analysoimaan"
+    },
+    "lähteet": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Dokumentoidut lähteet (raportit, tuomiot, tilastot)"
+    },
+    "cases": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/case"
+      }
+    }
+  },
+  "$defs": {
+    "case": {
+      "type": "object",
+      "required": [
+        "case_id",
+        "metadata",
+        "paths",
+        "learning"
+      ],
+      "properties": {
+        "case_id": {
+          "type": "string",
+          "description": "Anonymisoitu case-ID"
+        },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "vuosi": { "type": "integer" },
+            "ikä": { "type": "integer" },
+            "huomautus": { "type": "string" }
+          },
+          "additionalProperties": false
+        },
+        "paths": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/path"
+          }
+        },
+        "learning": {
+          "$ref": "#/$defs/learning"
+        }
+      }
+    },
+    "path": {
+      "type": "object",
+      "required": [
+        "trigger",
+        "tulkinta",
+        "toimenpide",
+        "seuraus"
+      ],
+      "properties": {
+        "trigger": {
+          "type": "string",
+          "description": "Alkuperäinen signaali tai epäily"
+        },
+        "tulkinta": {
+          "type": "string",
+          "description": "Tulkinta tai analyysimenetelmä"
+        },
+        "toimenpide": {
+          "type": "string",
+          "description": "Tehty päätös tai interventio"
+        },
+        "seuraus": {
+          "type": "string",
+          "description": "Lyhyen tai pitkän aikavälin seuraus"
+        },
+        "todennäköisyys": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Todennäköisyys tälle polulle (0–1)"
+        },
+        "kesto_vuotta": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Seurausketjun keskimääräinen kesto vuosina"
+        },
+        "hypoteesi": {
+          "type": "boolean",
+          "description": "Onko polku hypoteettinen (true) vai dokumentoitu (false)",
+          "default": false
+        }
+      }
+    },
+    "learning": {
+      "type": "object",
+      "required": ["pdca", "targets"],
+      "properties": {
+        "pdca": {
+          "$ref": "#/$defs/pdca"
+        },
+        "targets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/target"
+          }
+        }
+      }
+    },
+    "pdca": {
+      "type": "object",
+      "required": ["plan", "do", "check", "act"],
+      "properties": {
+        "plan": { "type": "string" },
+        "do": { "type": "string" },
+        "check": { "type": "string" },
+        "act": { "type": "string" }
+      }
+    },
+    "target": {
+      "type": "object",
+      "required": [
+        "id",
+        "taso",
+        "toiminta",
+        "mittaus",
+        "kriteeri"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "Oppimistavoitteen tunniste (esim. T1)"
+        },
+        "taso": {
+          "type": "string",
+          "enum": [
+            "Muistaminen",
+            "Ymmärtäminen",
+            "Analysoiminen",
+            "Arvioiminen",
+            "Luominen"
+          ]
+        },
+        "toiminta": {
+          "type": "string",
+          "description": "Mitä oppija tekee (Bloom-verbi)"
+        },
+        "mittaus": {
+          "type": "string",
+          "description": "Miten suoritus mitataan"
+        },
+        "kriteeri": {
+          "type": "string",
+          "description": "Hyväksymisraja (esim. 80%, 5+ askelta)"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["pending", "completed"],
+          "default": "pending"
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
