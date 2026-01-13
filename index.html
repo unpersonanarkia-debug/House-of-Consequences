@@ -1,274 +1,62 @@
+
 <!DOCTYPE html>
-<html lang="fi">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>House of Consequences — Commercial Prototype</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Kaupallinen prototyyppi päätösten elinkaaren dokumentointiin ja seurausten näkyväksi tekemiseen.">
-
-  <style>
-    :root {
-      --bg: #f8f5f0;
-      --ink: #2c2c2c;
-      --muted: #666;
-      --accent: #1e3a5f;
-      --gold: #8b6f47;
-      --border: #ddd;
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: Georgia, serif;
-      line-height: 1.7;
-    }
-
-    header {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 4rem 1.5rem 3rem;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.6rem;
-      margin-bottom: 0.75rem;
-      letter-spacing: 1px;
-    }
-
-    header p {
-      max-width: 720px;
-      margin: 0 auto;
-      color: var(--muted);
-      font-size: 1.05rem;
-    }
-
-    nav {
-      margin-top: 2rem;
-      font-size: 0.95rem;
-    }
-
-    nav a {
-      margin: 0 0.75rem;
-      text-decoration: none;
-      color: var(--accent);
-      border-bottom: 1px solid transparent;
-    }
-
-    nav a:hover {
-      border-bottom-color: var(--accent);
-    }
-
-    main {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 1rem 1.5rem 4rem;
-    }
-
-    .block {
-      margin: 4rem 0;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .block h2 {
-      font-size: 1.8rem;
-      margin-bottom: 0.75rem;
-      color: var(--accent);
-    }
-
-    .block p {
-      max-width: 760px;
-    }
-
-    .phase {
-      margin: 3rem 0;
-      padding-left: 1.25rem;
-      border-left: 3px solid var(--gold);
-    }
-
-    .phase-index {
-      font-size: 0.85rem;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 0.25rem;
-    }
-
-    .phase h3 {
-      margin: 0.25rem 0 0.5rem;
-      font-size: 1.35rem;
-    }
-
-    .case-box {
-      margin-top: 2rem;
-      padding: 1.5rem;
-      border: 1px solid var(--border);
-      background: #fff;
-    }
-
-    label {
-      display: block;
-      margin-top: 1.25rem;
-      font-weight: bold;
-      font-size: 0.9rem;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 0.6rem;
-      margin-top: 0.25rem;
-      font-family: inherit;
-      font-size: 0.95rem;
-      border: 1px solid var(--border);
-      background: #fafafa;
-    }
-
-    textarea {
-      min-height: 80px;
-    }
-
-    button {
-      margin-top: 1.5rem;
-      padding: 0.6rem 1.2rem;
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      font-family: inherit;
-      cursor: pointer;
-    }
-
-    button:hover {
-      opacity: 0.9;
-    }
-
-    .preview {
-      margin-top: 2rem;
-      padding: 1.25rem;
-      background: #fdfdfd;
-      border-left: 4px solid var(--accent);
-      display: none;
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      text-align: center;
-      padding: 1.75rem 1rem;
-      font-size: 0.85rem;
-      color: var(--muted);
-      background: var(--bg);
-    }
-  </style>
+  <title>Seurausten Talo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-
-<body>
-
-<header>
-  <h1>House of Consequences</h1>
-  <p>
-    Kaupallinen prototyyppi päätösten elinkaaren dokumentointiin.
-    Tämä järjestelmä ei arvioi päätöksiä – se tekee niiden seuraukset näkyviksi.
-  </p>
-
-  <nav>
-    <a href="#model">Malli</a>
-    <a href="#phases">Elinkaari</a>
-    <a href="#case">Luo case</a>
-  </nav>
-</header>
-
-<main>
-
-  <section id="model" class="block">
-    <h2>Mikä tämä on</h2>
-    <p>
-      Seurausten talo on rakenteellinen tulkintamalli päätöksille, jotka
-      vaikuttavat ihmisiin, järjestelmiin ja instituutioihin ajan yli.
-      Tämä sivu on kaupallinen prototyyppi mallin käytännöllisestä sovelluksesta.
-    </p>
-  </section>
-
-  <section id="phases" class="block">
-    <h2>Päätöksen elinkaari</h2>
-
-    <div class="phase">
-      <div class="phase-index">Vaihe 1 / 6</div>
-      <h3>Päätös</h3>
-      <p>Yksi toimintalinja valitaan muiden vaihtoehtojen sijaan.</p>
+<body class="p-8 max-w-4xl mx-auto">
+  
+  <!-- SYÖTE -->
+  <div class="grid md:grid-cols-2 gap-8">
+    <div>
+      <h1 class="text-3xl font-bold mb-6">📝 Luo päätöscase</h1>
+      
+      <input id="name" placeholder="Päätöksen nimi" 
+             class="w-full p-3 border rounded mb-4">
+      <textarea id="desc" placeholder="Päätöksen kuvaus" 
+                class="w-full p-3 border rounded mb-4 h-32"></textarea>
+      <textarea id="impacts" placeholder="Odotetut vaikutukset" 
+                class="w-full p-3 border rounded mb-6 h-24"></textarea>
+      
+      <button onclick="generateAnalysis()" 
+              class="w-full bg-blue-600 text-white p-3 rounded font-bold">
+        GENEROI ANALYYSI
+      </button>
     </div>
 
-    <div class="phase">
-      <div class="phase-index">Vaihe 2 / 6</div>
-      <h3>Vaikutus</h3>
-      <p>Päätös alkaa muuttaa ympäristöään ja tuottaa ensimmäisiä reaktioita.</p>
+    <!-- TULOS -->
+    <div id="output" class="hidden bg-gray-50 p-6 rounded-lg">
+      <h2 class="text-2xl font-bold mb-4">🏠 SEURAUSTEN TALO</h2>
+      <pre id="analysis" class="whitespace-pre-wrap font-mono text-sm"></pre>
+      <button onclick="exportPDF()" class="mt-4 bg-green-600 text-white px-6 py-2 rounded">
+        💾 PDF
+      </button>
     </div>
+  </div>
 
-    <div class="phase">
-      <div class="phase-index">Vaihe 3 / 6</div>
-      <h3>Seuraukset</h3>
-      <p>Vaikutuksista syntyy kertautuvia ja usein epäsuoria seurauksia.</p>
-    </div>
+  <script>
+    function generateAnalysis() {
+      const name = document.getElementById('name').value;
+      const desc = document.getElementById('desc').value;
+      const impacts = document.getElementById('impacts').value;
+      
+      const analysis = `
+PÄÄTÖS 2024: ${name}
+│
+├── VAIKUTUS 2025–2026
+│   ├── ${impacts.split('\n')[0] || 'Vaikutus 1'}
+│   └── ${impacts.split('\n')[1] || 'Vaikutus 2'}
+│
+├── SEURAUKSET 2027–2035
+│   ├── Pitkät vaikutukset
+│   └── Kumulatiiviset ketjut
+│
+└── NORMI 2060+: Uusi normaali`;
 
-    <div class="phase">
-      <div class="phase-index">Vaihe 4 / 6</div>
-      <h3>Sopeutuminen</h3>
-      <p>Järjestelmä mukautuu seurauksiin ja alkaa toimia niiden puitteissa.</p>
-    </div>
-
-    <div class="phase">
-      <div class="phase-index">Vaihe 5 / 6</div>
-      <h3>Kertautuminen</h3>
-      <p>Seurauksista muodostuu pysyvä rakenne ja uusi normaali.</p>
-    </div>
-
-    <div class="phase">
-      <div class="phase-index">Vaihe 6 / 6</div>
-      <h3>Normalisoituminen</h3>
-      <p>Alkuperäinen päätös katoaa, mutta sen tuottama tila jää.</p>
-    </div>
-  </section>
-
-  <section id="case" class="block">
-    <h2>Luo päätöscase</h2>
-
-    <div class="case-box">
-      <label>Päätöksen nimi</label>
-      <input id="title" placeholder="Esim. Organisaatiomuutos">
-
-      <label>Päätöksen kuvaus</label>
-      <textarea id="desc"></textarea>
-
-      <label>Odotetut vaikutukset</label>
-      <textarea id="effects"></textarea>
-
-      <button onclick="previewCase()">Näytä esikatselu</button>
-
-      <div id="preview" class="preview"></div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  © 2026 Seurausten talo – itseoppiva & autonominen muisti
-</footer>
-
-<script>
-  function previewCase() {
-    const title = document.getElementById('title').value;
-    const desc = document.getElementById('desc').value;
-    const effects = document.getElementById('effects').value;
-    const box = document.getElementById('preview');
-
-    box.style.display = 'block';
-    box.innerHTML = `
-      <strong>${title || 'Nimetön päätös'}</strong><br><br>
-      <em>Kuvaus:</em><br>${desc || '—'}<br><br>
-      <em>Odotetut vaikutukset:</em><br>${effects || '—'}
-    `;
-  }
-</script>
-
+      document.getElementById('analysis').textContent = analysis;
+      document.getElementById('output').classList.remove('hidden');
+    }
+  </script>
 </body>
 </html>
