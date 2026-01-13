@@ -1,0 +1,34 @@
+{
+  "name": "house-of-consequences",
+  "version": "1.0.0",
+  "description": "🏛️ House of Consequences",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unpersonanarkia-debug/House-of-Consequences.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/unpersonanarkia-debug/House-of-Consequences/issues"
+  },
+  "homepage": "https://github.com/unpersonanarkia-debug/House-of-Consequences#readme",
+  "dependencies": {
+    "highlight.js": "^11.11.1",
+    "marked": "^17.0.1",
+    "pdfmake": "^0.3.2"
+  },
+  "devDependencies": {
+    "prettier": "^3.7.4",
+    "rollup": "^4.55.1",
+    "vite": "^7.3.1"
+  }
+}
